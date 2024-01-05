@@ -398,6 +398,7 @@ def analyze_video(path: Path, thumbnail: Path = None) -> tuple:
         print(f'Generating thumbnail "{thumbnail}"...')
         video.save_frame(thumbnail, t=(video.duration / 2))
         crop_thumbnail(thumbnail)
+    video.close()
     return thumbnail, width, height, video.duration
 
 
